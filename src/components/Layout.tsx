@@ -23,7 +23,9 @@ const Layout = ({ children }: LayoutProps) => {
         </div>
       </div>
       <div className="absolute top-4 left-4">
-        <RubyLogo className="h-15" />
+        <a href="/">
+          <RubyLogo className="h-15" />
+        </a>
       </div>
       <div className="absolute top-4 right-4">
         <DarkThemeToggle className="hover:bg-icon-200 focus:ring-0 text-icon-950 dark:text-icon-50"/>
@@ -32,6 +34,12 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="relative flex w-full max-w-6xl flex-col items-center justify-between min-h-screen">
         {children}
       </div>
+      <footer className="w-full mt-12">
+        <div className="flex justify-around items-center py-6 px-4 backdrop-blur-sm">
+          <p className="text-sm text-icon-900 dark:text-icon-200">Made with ❤️ by <a className="hover:underline underline-offset-2" href="https://github.com/Hugofsp93" target="_blank">Hugofsp93</a></p>
+          <p className="text-sm text-icon-900 dark:text-icon-200">© 2025 DevTools Hub</p>
+        </div>
+      </footer>
     </main>
   );
 };

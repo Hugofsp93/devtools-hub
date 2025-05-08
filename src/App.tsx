@@ -146,12 +146,6 @@ export default function App() {
             ))}
           </div>
         </div>
-        <footer className="w-full mt-12">
-          <div className="flex justify-between items-center py-6 px-4 backdrop-blur-sm">
-            <p className="text-sm text-icon-900 dark:text-icon-200">Made with ❤️ by Hugofsp93</p>
-            <p className="text-sm text-icon-900 dark:text-icon-200">© 2025 DevTools Hub</p>
-          </div>
-        </footer>
       </div>
     </Layout>
   );
