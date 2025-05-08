@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #fef4ee;
+  --color-primary-100: #fde7d7;
+  --color-primary-200: #facbae;
+  --color-primary-300: #f6a67b;
+  --color-primary-400: #f27745;
+  --color-primary-500: #ee5522;
+  --color-primary-600: #df3b17;
+  --color-primary-700: #b92b15;
+  --color-primary-800: #932419;
+  --color-primary-900: #772117;
+  --color-primary-950: #400d0a;
+
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f4f4f5;
+  --color-gray-200: #e4e4e7;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+  --color-gray-500: #71717a;
+  --color-gray-600: #52525b;
+  --color-gray-700: #3f3f46;
+  --color-gray-800: #27272a;
+  --color-gray-900: #18181b;
+  --color-gray-950: #09090b;
+
+  --color-icon-50: #f8f6f4;
+  --color-icon-100: #eeebe6;
+  --color-icon-200: #d2c6bb;
+  --color-icon-300: #c7b7aa;
+  --color-icon-400: #af9888;
+  --color-icon-500: #9f8070;
+  --color-icon-600: #927164;
+  --color-icon-700: #7a5d54;
+  --color-icon-800: #644d48;
+  --color-icon-900: #52413c;
+  --color-icon-950: #2b201f;
+
+  --color-darkicon-50: #f8f6f4;
+  --color-darkicon-100: #eeebe6;
+  --color-darkicon-200: #d2c6bb;
+  --color-darkicon-300: #c7b7aa;
+  --color-darkicon-400: #af9888;
+  --color-darkicon-500: #9f8070;
+  --color-darkicon-600: #927164;
+  --color-darkicon-700: #7a5d54;
+  --color-darkicon-800: #644d48;
+  --color-darkicon-900: #52413c;
+  --color-darkicon-950: #2b201f;
+}
