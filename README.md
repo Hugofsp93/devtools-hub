@@ -3,7 +3,7 @@
 A curated collection of essential development tools and utilities, all in one place. This hub provides quick access to popular web development tools, making your workflow more efficient and productive.
 
 <div align="center">
-  <img src="public/code.png" alt="DevTools Hub Preview" />
+  <img src="code.png" alt="DevTools Hub Preview" />
 </div>
 
 ## ✨ Features
