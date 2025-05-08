@@ -145,7 +145,7 @@ const CSSGradientStudio = () => {
         {/* CSS Code Output */}
         <div className="w-full max-w-2xl flex flex-col gap-2 mt-2">
           <label className="block text-xs font-semibold text-icon-950 dark:text-icon-50 mb-1">CSS Code</label>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row sm:justify-center gap-2">
             <pre className="bg-icon-50 dark:bg-gray-900 rounded-lg px-4 py-3 text-sm overflow-x-auto select-all flex-1 border border-icon-200 dark:border-icon-700 transition-all font-mono text-icon-950 dark:text-icon-50">{cssCode}</pre>
             <button
               onClick={handleCopy}

@@ -35,7 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </div>
       <footer className="w-full mt-12">
-        <div className="flex justify-around items-center py-6 px-4 backdrop-blur-sm">
+        <div className="flex flex-col sm:flex-row justify-around items-center py-6 px-4 backdrop-blur-sm">
           <p className="text-sm text-icon-900 dark:text-icon-200">Made with ❤️ by <a className="hover:underline underline-offset-2" href="https://github.com/Hugofsp93" target="_blank">Hugofsp93</a></p>
           <p className="text-sm text-icon-900 dark:text-icon-200">© 2025 <a className="hover:underline underline-offset-2" href="https://github.com/Hugofsp93/devtools-hub" target="_blank">DevTools Hub</a></p>
         </div>
