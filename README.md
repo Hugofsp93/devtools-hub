@@ -2,7 +2,9 @@
 
 A curated collection of essential development tools and utilities, all in one place. This hub provides quick access to popular web development tools, making your workflow more efficient and productive.
 
-![DevTools Hub Preview](public/ruby.png)
+<div align="center">
+  <img src="public/code.png" alt="DevTools Hub Preview" />
+</div>
 
 ## ✨ Features
 
@@ -12,20 +14,43 @@ A curated collection of essential development tools and utilities, all in one pl
 - **Direct Access**: One-click access to popular development utilities
 - **Responsive Design**: Works perfectly on all device sizes
 
-## 🛠️ Included Tools
+## 🛠️ Tools
 
-- **CSS Gradient Studio**: Create beautiful CSS gradients
-- **Color Palette Creator**: Generate harmonious color schemes
-- **Box Shadow Generator**: Design custom box shadows
-- **Geometric Pattern Maker**: Create stunning geometric patterns
-- **TaskFlow**: Task management with drag-and-drop
-- **QR Code Studio**: Generate and customize QR codes
-- **AI Image Creator**: Transform text into images using AI
-- **Email Sandbox**: Test email templates
-- **Glassmorphism Designer**: Create glass-like UI elements
-- **Color Picker Pro**: Advanced color selection tool
-- **Chart Builder**: Create interactive charts and graphs
-- **JSON Visualizer**: Format and visualize JSON data
+### 1. CSS Gradient Studio
+Create, customize, and export beautiful CSS gradients with live preview and code generation. Perfect for web designers and developers who need to create smooth color transitions and background effects.
+
+### 2. Color Palette Creator
+Generate harmonious color schemes with complementary, analogous, and triadic color combinations. Ideal for designers and developers who need to create cohesive color palettes for their projects.
+
+### 3. Box Shadow Generator
+Design and customize box shadows with an intuitive interface. Features live preview and CSS code export, making it easy to create depth and elevation effects in your web designs.
+
+### 4. Geometric Pattern Maker
+Create stunning geometric patterns and backgrounds with customizable shapes, colors, and arrangements. Perfect for creating unique textures and visual elements for your projects.
+
+### 5. TaskFlow
+A minimalist task management app with drag-and-drop functionality. Organize your tasks with categories and track your progress efficiently. Great for project management and personal productivity.
+
+### 6. QR Code Studio
+Generate, customize, and download QR codes with various styles, colors, and error correction levels. Useful for marketing, product packaging, and digital content sharing.
+
+### 7. AI Image Creator
+Transform text descriptions into unique images using AI. Create custom artwork, illustrations, and visual content with style customization and export options.
+
+### 8. Email Sandbox
+Test and preview email templates with real-time rendering and spam score checking. Essential for email marketers and developers who need to ensure their emails look perfect across different clients.
+
+### 9. Glassmorphism Designer
+Create modern glass-like UI elements with customizable blur, transparency, and border effects. Perfect for creating contemporary, frosted glass interfaces that are popular in modern web design.
+
+### 10. Color Picker Pro
+Advanced color selection tool with hex, RGB, and HSL values. Includes color harmony suggestions and advanced color manipulation features for precise color work.
+
+### 11. Chart Builder
+Create interactive charts and graphs with various types (line, bar, pie) and customizable data visualization. Ideal for data analysts and developers who need to present data in a clear, visual format.
+
+### 12. JSON Visualizer
+Format, validate, and visualize JSON data with tree view and syntax highlighting. Essential for developers working with JSON data structures and APIs.
 
 ## 🚀 Getting Started
 

@@ -1,5 +1,17 @@
-import { DarkThemeToggle } from "flowbite-react";
-import RubyLogo from "./RubyLogo.tsx"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import CSSGradientStudio from "./pages/CSSGradientStudio";
+import ColorPaletteCreator from "./pages/ColorPaletteCreator";
+import BoxShadowGenerator from "./pages/BoxShadowGenerator";
+import GeometricPatternMaker from "./pages/GeometricPatternMaker";
+import TaskFlow from "./pages/TaskFlow";
+import QRCodeStudio from "./pages/QRCodeStudio";
+import AIImageCreator from "./pages/AIImageCreator";
+import EmailSandbox from "./pages/EmailSandbox";
+import GlassmorphismDesigner from "./pages/GlassmorphismDesigner";
+import ColorPickerPro from "./pages/ColorPickerPro";
+import ChartBuilder from "./pages/ChartBuilder";
+import JSONVisualizer from "./pages/JSONVisualizer";
 
 export default function App() {
   const CARDS = [
@@ -7,100 +19,79 @@ export default function App() {
       title: "CSS Gradient Studio",
       description:
         "Create, customize, and export beautiful CSS gradients with live preview and code generation",
-      url: "https://cssgradient.io",
+      url: "/css-gradient-studio",
     },
     {
       title: "Color Palette Creator",
       description:
         "Generate harmonious color schemes with complementary, analogous, and triadic color combinations, perfect for design projects",
-      url: "https://coolors.co",
+      url: "/color-palette-creator",
     },
     {
       title: "Box Shadow Generator",
       description:
         "Design and customize box shadows with an intuitive interface, complete with live preview and CSS code export",
-      url: "https://box-shadow.dev",
+      url: "/box-shadow-generator",
     },
     {
       title: "Geometric Pattern Maker",
       description:
         "Create stunning geometric patterns and backgrounds with customizable shapes, colors, and arrangements",
-      url: "https://pattern.monster",
+      url: "/geometric-pattern-maker",
     },
     {
       title: "TaskFlow",
       description:
         "A minimalist task management app with drag-and-drop functionality, categories, and progress tracking",
-      url: "https://todoist.com",
+      url: "/taskflow",
     },
     {
       title: "QR Code Studio",
       description:
         "Generate, customize, and download QR codes with various styles, colors, and error correction levels",
-      url: "https://www.qr-code-generator.com",
+      url: "/qr-code-studio",
     },
     {
       title: "AI Image Creator",
       description:
         "Transform text descriptions into unique images using AI, with style customization and export options",
-      url: "https://www.midjourney.com",
+      url: "/ai-image-creator",
     },
     {
       title: "Email Sandbox",
       description:
         "Test and preview email templates with real-time rendering and spam score checking",
-      url: "https://mailtrap.io",
+      url: "/email-sandbox",
     },
     {
       title: "Glassmorphism Designer",
       description:
         "Create modern glass-like UI elements with customizable blur, transparency, and border effects",
-      url: "https://glassmorphism.com",
+      url: "/glassmorphism-designer",
     },
     {
       title: "Color Picker Pro",
       description:
         "Advanced color selection tool with hex, RGB, HSL values, and color harmony suggestions",
-      url: "https://colorpicker.me",
+      url: "/color-picker-pro",
     },
     {
       title: "Chart Builder",
       description:
         "Create interactive charts and graphs with various types (line, bar, pie) and customizable data visualization",
-      url: "https://www.chartjs.org",
+      url: "/chart-builder",
     },
     {
       title: "JSON Visualizer",
       description:
         "Format, validate, and visualize JSON data with tree view and syntax highlighting",
-      url: "https://jsoneditoronline.org",
+      url: "/json-visualizer",
     },
   ];
 
-  return (
-    <main className="flex min-h-screen flex-col items-center bg-white px-4 py-12 dark:bg-gray-900">
-      <div className="absolute inset-0 size-full">
-        <div className="relative h-full w-full select-none">
-          <img
-            className="absolute right-0 min-w-dvh dark:hidden"
-            alt="Pattern Light"
-            src="/light-dune.svg"
-          />
-          <img
-            className="absolute right-0 hidden dark:block"
-            alt="Pattern Dark"
-            src="/dark-dune.svg"
-          />
-        </div>
-      </div>
-      <div className="absolute top-4 left-4">
-        <RubyLogo className="h-15" />
-      </div>
-      <div className="absolute top-4 right-4">
-        <DarkThemeToggle className="hover:bg-icon-200 focus:ring-0 text-icon-950 dark:text-icon-50"/>
-      </div>
-
-      <div className="relative flex w-full max-w-6xl flex-col items-center justify-center gap-12">
+  const Home = () => (
+    <Layout>
+      <div className="flex flex-col items-center gap-12">
         <div className="relative flex flex-col items-center gap-6 pb-10">
           <h1 className="relative text-center text-4xl leading-[125%] font-bold text-icon-950 dark:text-icon-50">
             Build fast
@@ -118,23 +109,22 @@ export default function App() {
               <a
                 key={card.title}
                 href={card.url}
-                target="_blank"
-                className="outline-primary-600 dark:outline-primary-500 group hover:border-primary-600 dark:hover:border-primary-500 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 outline-offset-2 focus:outline-2 dark:border-gray-700 dark:bg-gray-800"
+                className="outline-primary-600 dark:outline-primary-500 group hover:border-2 hover:border-primary-600 dark:hover:border-primary-500 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800"
               >
                 <div className="flex flex-col items-center gap-6 p-4">
                   <div className="flex flex-1 items-center gap-2">
                     <div className="flex flex-1 flex-col items-start justify-center gap-1.5 pl-3.5 dark:border-gray-700">
-                      <div className="w-full font-sans text-lg leading-4 font-semibold text-gray-900 dark:text-gray-200">
+                      <div className="w-full font-sans text-lg font-semibold text-gray-900 dark:text-gray-200">
                         {card.title}
                       </div>
 
-                      <div className="w-full font-sans text-sm leading-5 font-normal text-gray-500 dark:text-gray-400">
+                      <div className="w-full min-h-15 font-sans text-sm font-normal text-gray-500 dark:text-gray-400">
                         {card.description}
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-1 gap-2 ml-auto">
+                  <div className="ml-auto inline-flex font-medium hover:underline mb-auto">
                     <svg
                       width="24"
                       height="24"
@@ -156,10 +146,33 @@ export default function App() {
             ))}
           </div>
         </div>
-        <footer>
-          <p className="text-icon-950 dark:text-icon-200">Monte meu footer parceiro</p>
+        <footer className="w-full mt-12">
+          <div className="flex justify-between items-center py-6 px-4 backdrop-blur-sm">
+            <p className="text-sm text-icon-900 dark:text-icon-200">Made with ❤️ by Hugofsp93</p>
+            <p className="text-sm text-icon-900 dark:text-icon-200">© 2025 DevTools Hub</p>
+          </div>
         </footer>
       </div>
-    </main>
+    </Layout>
+  );
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/css-gradient-studio" element={<CSSGradientStudio />} />
+        <Route path="/color-palette-creator" element={<ColorPaletteCreator />} />
+        <Route path="/box-shadow-generator" element={<BoxShadowGenerator />} />
+        <Route path="/geometric-pattern-maker" element={<GeometricPatternMaker />} />
+        <Route path="/taskflow" element={<TaskFlow />} />
+        <Route path="/qr-code-studio" element={<QRCodeStudio />} />
+        <Route path="/ai-image-creator" element={<AIImageCreator />} />
+        <Route path="/email-sandbox" element={<EmailSandbox />} />
+        <Route path="/glassmorphism-designer" element={<GlassmorphismDesigner />} />
+        <Route path="/color-picker-pro" element={<ColorPickerPro />} />
+        <Route path="/chart-builder" element={<ChartBuilder />} />
+        <Route path="/json-visualizer" element={<JSONVisualizer />} />
+      </Routes>
+    </Router>
   );
 }
