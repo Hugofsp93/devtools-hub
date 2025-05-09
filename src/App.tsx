@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import CSSGradientStudio from "./pages/CSSGradientStudio";
-import ColorPaletteCreator from "./pages/ColorPaletteCreator";
+import ColorPaletteCreator from "./components/ColorPaletteCreator";
 import BoxShadowGenerator from "./pages/BoxShadowGenerator";
 import GeometricPatternMaker from "./pages/GeometricPatternMaker";
 import TaskFlow from "./pages/TaskFlow";
