@@ -10,7 +10,8 @@ const CSSGradientStudio = () => {
   const [angleInput, setAngleInput] = useState(angle.toString());
   const [color1Input, setColor1Input] = useState(color1);
   const [color2Input, setColor2Input] = useState(color2);
-  const [copied, setCopied] = useState(false);
+  const [copyCss, setCopyCss] = useState(false);
+  const [copyTailwindcss, setCopyTailwindcss] = useState(false);
 
   // Handle color1 hex input
   const handleColor1Input = (val: string) => {
@@ -54,11 +55,20 @@ const CSSGradientStudio = () => {
       : `radial-gradient(circle, ${color1}, ${color2})`;
 
   const cssCode = `background: ${gradient};`;
+  const tailwindcssCode =
+    type === "linear"
+      ? `bg-gradient-to-r from-[${color1}] to-[${color2}]`
+      : `bg-[radial-gradient(ellipse_at_center,${color1},${color2})]`;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(cssCode);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1200);
+  const handleCopy = (type: 'cssCode' | 'tailwindcssCode') => {
+    navigator.clipboard.writeText(type === 'cssCode' ? cssCode : tailwindcssCode);
+    if (type === 'cssCode') {
+      setCopyCss(true);
+      setTimeout(() => setCopyCss(false), 1200);
+    } else {
+      setCopyTailwindcss(true);
+      setTimeout(() => setCopyTailwindcss(false), 1200);
+    }
   };
 
   return (
@@ -78,7 +88,7 @@ const CSSGradientStudio = () => {
         </div>
 
         {/* Controls */}
-        <div className="w-full max-w-2xl bg-icon-100 dark:bg-gray-900 border border-icon-200 dark:border-icon-800 rounded-2xl p-6 flex flex-col md:flex-row gap-6 md:gap-10 items-center justify-center transition-all">
+        <div className="w-full max-w-2xl bg-icon-100 dark:bg-gray-900 border border-icon-200 dark:border-icon-800 rounded-2xl p-6 flex flex-col md:flex-row gap-6 md:gap-10 items-center justify-center transition-all min-h-[140px]" style={{ minWidth: 0 }}>
           {/* Type */}
           <div className="flex flex-col items-start gap-1 w-full max-w-[120px]">
             <label className="text-xs font-semibold text-icon-950 dark:text-icon-100 mb-1">Type</label>
@@ -150,23 +160,49 @@ const CSSGradientStudio = () => {
                   aria-label="Set angle for linear gradient"
                   placeholder="0-360"
                 />
-                <span className="text-xs text-icon-600 dark:text-icon-200">deg</span>
+                <span className="text-xs text-icon-950 dark:text-icon-200">deg</span>
+              </div>
+            </div>
+          )}
+          {type === "radial" && (
+            <div className={`flex flex-col items-start gap-1 w-full max-w-[120px] ${type === 'radial' ? 'opacity-50' : ''}`}>
+              <label className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Angle</label>
+              <div className="flex items-center gap-2">
+                <input className="rounded-lg border px-2 py-1 w-16 bg-icon-100 dark:bg-gray-700 text-icon-950 dark:text-icon-50 border-icon-200 dark:border-icon-700" disabled />
+                <span className="text-xs text-gray-600 dark:text-gray-400">deg</span>
               </div>
             </div>
           )}
         </div>
 
         {/* CSS Code Output */}
-        <div className="w-full max-w-2xl flex flex-col gap-2 mt-2">
+        <div className="w-full max-w-2xl flex flex-col gap-2">
           <label className="block text-xs font-semibold text-icon-950 dark:text-icon-50 mb-1">CSS Code</label>
           <div className="flex flex-col sm:flex-row sm:justify-center gap-2">
             <pre className="bg-icon-50 dark:bg-gray-900 rounded-lg px-4 py-3 text-sm overflow-x-auto select-all flex-1 border border-icon-200 dark:border-icon-700 transition-all font-mono text-icon-950 dark:text-icon-50">{cssCode}</pre>
             <button
-              onClick={handleCopy}
-              className={`min-w-[80px] px-4 py-2 rounded-lg font-semibold transition bg-icon-800 text-icon-50 hover:bg-icon-600 focus:ring-1 focus:ring-icon-400 outline-none relative ${copied ? 'bg-green-500' : ''}`}
+              onClick={() => handleCopy('cssCode')}
+              className="min-w-[90px] px-4 py-2 rounded-lg font-semibold transition bg-primary-500 text-icon-50 hover:bg-primary-400 focus:ring-1 focus:ring-primary-400 outline-none relative text-center"
               aria-label="Copy CSS code"
             >
-              {copied ? "Copied!" : "Copy"}
+              <span className="invisible">Copied!</span>
+              <span className="absolute left-0 right-0 w-full text-center">{copyCss ? "Copied!" : "Copy"}</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Tailwind CSS Code Output */}
+        <div className="w-full max-w-2xl flex flex-col gap-2">
+          <label className="block text-xs font-semibold text-icon-950 dark:text-icon-50 mb-1">Tailwindcss Code</label>
+          <div className="flex flex-col sm:flex-row sm:justify-center gap-2">
+            <pre className="bg-icon-50 dark:bg-gray-900 rounded-lg px-4 py-3 text-sm overflow-x-auto select-all flex-1 border border-icon-200 dark:border-icon-700 transition-all font-mono text-icon-950 dark:text-icon-50">{tailwindcssCode}</pre>
+            <button
+              onClick={() => handleCopy('tailwindcssCode')}
+              className="min-w-[90px] px-4 py-2 rounded-lg font-semibold transition bg-primary-500 text-icon-50 hover:bg-primary-400 focus:ring-1 focus:ring-primary-400 outline-none relative text-center"
+              aria-label="Copy Tailwindcss code"
+            >
+              <span className="invisible">Copied!</span>
+              <span className="absolute left-0 right-0 w-full text-center">{copyTailwindcss ? "Copied!" : "Copy"}</span>
             </button>
           </div>
         </div>

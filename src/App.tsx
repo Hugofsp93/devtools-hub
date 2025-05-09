@@ -93,11 +93,11 @@ export default function App() {
     <Layout>
       <div className="flex flex-col items-center gap-12">
         <div className="relative flex flex-col items-center gap-6 pb-10">
-          <h1 className="relative text-center text-4xl leading-[125%] font-bold text-icon-950 dark:text-icon-50">
+          <h1 className="relative text-center text-4xl leading-[125%] font-bold text-primary-950 dark:text-primary-50">
             Build fast
           </h1>
           <span className="inline-flex flex-col items-center justify-center gap-2.5 text-center">
-            <span className="inline text-xl text-icon-600 dark:text-icon-200">
+            <span className="inline text-xl text-primary-900 dark:text-primary-100">
               Hey! Check some interesting tools for development
             </span>
           </span>
@@ -109,7 +109,7 @@ export default function App() {
               <a
                 key={card.title}
                 href={card.url}
-                className="outline-primary-600 dark:outline-primary-500 group hover:border-2 hover:border-primary-600 dark:hover:border-primary-500 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800"
+                className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800 outline-primary-600 dark:outline-primary-500 transition-all duration-150 hover:outline-2 hover:outline-primary-600 dark:hover:outline-primary-500"
               >
                 <div className="flex flex-col items-center gap-6 p-4">
                   <div className="flex flex-1 items-center gap-2">
