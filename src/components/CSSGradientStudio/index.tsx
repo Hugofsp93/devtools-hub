@@ -1,20 +1,20 @@
 import { useState } from "react";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
+import { usePersistedState } from "../../utils/usePersistedState";
 
 const CSSGradientStudio = () => {
-  const [type, setType] = useState("linear");
-  const [color1, setColor1] = useState("#f86e0d");
-  const [color2, setColor2] = useState("#ffd500");
-  const [color1Input, setColor1Input] = useState("#f86e0d");
-  const [color2Input, setColor2Input] = useState("#ffd500");
-  const [angle, setAngle] = useState(90);
+  const [type, setType] = usePersistedState("css-gradient-type", "linear");
+  const [color1, setColor1] = usePersistedState("css-gradient-color1", "#f86e0d");
+  const [color2, setColor2] = usePersistedState("css-gradient-color2", "#ffd500");
+  const [angle, setAngle] = usePersistedState("css-gradient-angle", 90);
+  const [angleInput, setAngleInput] = useState(angle.toString());
+  const [color1Input, setColor1Input] = useState(color1);
+  const [color2Input, setColor2Input] = useState(color2);
   const [copied, setCopied] = useState(false);
 
   // Handle color1 hex input
   const handleColor1Input = (val: string) => {
-    // Always start with #
     if (!val.startsWith("#")) val = "#" + val.replace(/^#+/, "");
-    // Only allow # and hex digits, max 7 chars
     val = val.slice(0, 7).replace(/[^#0-9a-fA-F]/g, "");
     setColor1Input(val);
     if (/^#([0-9A-Fa-f]{6})$/.test(val)) setColor1(val);
@@ -22,7 +22,7 @@ const CSSGradientStudio = () => {
   // Handle color2 hex input
   const handleColor2Input = (val: string) => {
     if (!val.startsWith("#")) val = "#" + val.replace(/^#+/, "");
-    val = val.slice(0, 7).replace(/[^#0-9a-fA-F]/g, "");
+    val = val.slice(0, 7).replace(/[^#0-9A-Fa-f]/g, "");
     setColor2Input(val);
     if (/^#([0-9A-Fa-f]{6})$/.test(val)) setColor2(val);
   };
@@ -35,6 +35,17 @@ const CSSGradientStudio = () => {
   const handleColor2Picker = (val: string) => {
     setColor2(val);
     setColor2Input(val);
+  };
+
+  // Handle angle input as string
+  const handleAngleInput = (val: string) => {
+    // Permit empty string
+    setAngleInput(val);
+    // Only update the persisted value if it's a valid number
+    if (/^\d{1,3}$/.test(val)) {
+      const num = Number(val);
+      if (num >= 0 && num <= 360) setAngle(num);
+    }
   };
 
   const gradient =
@@ -128,13 +139,16 @@ const CSSGradientStudio = () => {
               <label className="text-xs font-semibold text-icon-950 dark:text-icon-100 mb-1">Angle</label>
               <div className="flex items-center gap-2">
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   min={0}
                   max={360}
-                  value={angle}
-                  onChange={e => setAngle(Number(e.target.value))}
-                  className="rounded-lg border px-2 py-1 w-16 bg-icon-50 dark:bg-gray-900 text-icon-950 dark:text-icon-50 border-icon-200 dark:border-icon-700 focus:ring-1 focus:ring-icon-400 outline-none transition"
+                  value={angleInput}
+                  onChange={e => handleAngleInput(e.target.value)}
+                  className="rounded-lg border px-2 py-1 w-16 bg-icon-50 dark:bg-gray-900 text-icon-950 dark:text-icon-50 border-icon-200 dark:border-icon-700 focus:ring-1 focus:ring-icon-400 outline-none transition font-mono"
                   aria-label="Set angle for linear gradient"
+                  placeholder="0-360"
                 />
                 <span className="text-xs text-icon-600 dark:text-icon-200">deg</span>
               </div>

@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import CSSGradientStudio from "./pages/CSSGradientStudio";
+import CSSGradientStudio from "./components/CSSGradientStudio";
 import ColorPaletteCreator from "./components/ColorPaletteCreator";
-import BoxShadowGenerator from "./pages/BoxShadowGenerator";
-import GeometricPatternMaker from "./pages/GeometricPatternMaker";
-import TaskFlow from "./pages/TaskFlow";
-import QRCodeStudio from "./pages/QRCodeStudio";
-import AIImageCreator from "./pages/AIImageCreator";
-import EmailSandbox from "./pages/EmailSandbox";
-import GlassmorphismDesigner from "./pages/GlassmorphismDesigner";
-import ColorPickerPro from "./pages/ColorPickerPro";
-import ChartBuilder from "./pages/ChartBuilder";
-import JSONVisualizer from "./pages/JSONVisualizer";
+import BoxShadowGenerator from "./components/BoxShadowGenerator";
+import GeometricPatternMaker from "./components/GeometricPatternMaker";
+import TaskFlow from "./components/TaskFlow";
+import QRCodeStudio from "./components/QRCodeStudio";
+import AIImageCreator from "./components/AIImageCreator";
+import EmailSandbox from "./components/EmailSandbox";
+import GlassmorphismDesigner from "./components/GlassmorphismDesigner";
+import ColorPickerPro from "./components/ColorPickerPro";
+import ChartBuilder from "./components/ChartBuilder";
+import JSONVisualizer from "./components/JSONVisualizer";
 
 export default function App() {
   const CARDS = [

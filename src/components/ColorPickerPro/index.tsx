@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from '../../components/Layout';
 
 const ColorPickerPro = () => {
   return (
@@ -14,7 +14,6 @@ const ColorPickerPro = () => {
             </span>
           </span>
         </div>
-
         <div className="w-full max-w-4xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg border border-gray-200 dark:border-gray-700 p-6">
           {/* Add your color picker content here */}
           <p className="text-icon-950 dark:text-icon-200">Color Picker Pro Content Coming Soon...</p>

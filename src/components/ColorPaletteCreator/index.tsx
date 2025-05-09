@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import { TailwindTab } from './components/TailwindTab';
 import { PaletteTab } from './components/PaletteTab';
-import { usePersistedState } from './hooks/usePersistedState';
+import { usePersistedState } from '../../utils/usePersistedState';
 import { TABS } from './constants';
 import type { TabType } from './constants';
 
