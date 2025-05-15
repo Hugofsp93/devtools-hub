@@ -117,7 +117,7 @@ const QRCodeStudio = () => {
             <div className="flex items-center justify-center">
               {qrData.content && validation.isValid ? (
                 <div className="flex flex-col gap-4">
-                  <div ref={qrRef} className="flex justify-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                  <div ref={qrRef} className="flex justify-center p-4 bg-gray-200 dark:bg-gray-50 rounded-lg shadow-lg">
                     <div className="relative">
                       <QRCodeSVG
                         value={formattedContent}
