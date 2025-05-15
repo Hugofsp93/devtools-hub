@@ -15,6 +15,7 @@ const QRCodeStudio = () => {
     fgColor: '#000000',
     bgColor: '#FFFFFF',
     size: 256,
+    includeMargin: true,
     level: 'M'
   });
 
@@ -123,7 +124,6 @@ const QRCodeStudio = () => {
                         size={qrStyle.size}
                         fgColor={qrStyle.fgColor}
                         bgColor={qrStyle.bgColor}
-                        marginSize={true}
                         level={qrStyle.level}
                       />
                       {qrStyle.logo && (
