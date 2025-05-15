@@ -7,7 +7,6 @@ export interface QRCodeStyle {
   fgColor: string;
   bgColor: string;
   size: number;
-  includeMargin: boolean;
   logo?: string;
   level: 'L' | 'M' | 'Q' | 'H';
 }

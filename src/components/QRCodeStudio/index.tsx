@@ -15,7 +15,6 @@ const QRCodeStudio = () => {
     fgColor: '#000000',
     bgColor: '#FFFFFF',
     size: 256,
-    includeMargin: true,
     level: 'M'
   });
 
