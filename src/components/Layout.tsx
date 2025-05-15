@@ -38,8 +38,8 @@ const Layout = ({ children }: LayoutProps) => {
       </div>
       <footer className="w-full mt-12">
         <div className="flex flex-col sm:flex-row justify-around items-center py-6 px-4 backdrop-blur-sm">
-          <p className="text-sm text-icon-900 dark:text-icon-200">Made with ❤️ by <a className="font-semibold text-primary-600 dark:text-primary-400 hover:underline underline-offset-2" href="https://github.com/Hugofsp93" target="_blank">Hugofsp93</a></p>
-          <p className="text-sm text-icon-900 dark:text-icon-200">© 2025 <a className="font-semibold text-primary-600 dark:text-primary-400 hover:underline underline-offset-2" href="https://github.com/Hugofsp93/devtools-hub" target="_blank">DevTools Hub</a></p>
+          <p className="text-sm text-icon-900 dark:text-icon-200">Made with ❤️ by <a className="font-semibold text-primary-600 hover:underline underline-offset-2" href="https://github.com/Hugofsp93" target="_blank">Hugofsp93</a></p>
+          <p className="text-sm text-icon-900 dark:text-icon-200">© 2025 <a className="font-semibold text-primary-600 hover:underline underline-offset-2" href="https://github.com/Hugofsp93/devtools-hub" target="_blank">DevTools Hub</a></p>
         </div>
       </footer>
     </main>
